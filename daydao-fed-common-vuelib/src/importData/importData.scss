@@ -1,0 +1,320 @@
+$prefixCls:'daydao-import-data';
+
+.#{$prefixCls}{
+    padding-bottom:60px;
+
+    /*导航标题*/
+    &-title{
+        background: #F5F7F9;
+        line-height: 46px;
+        height:46px;
+        text-align: center;
+        position: relative;
+
+        /*返回按钮*/
+        .back {
+            position: absolute;
+            top: 0;
+            left: 1.5%;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 46px;
+            height: 46px;
+
+            span {
+                color: #657180;
+            }
+        }
+
+        /*标题名称*/
+        h1{
+            font-size: 16px;
+            font-weight: bold;
+            color: #657180;
+            display: inline;
+        }
+
+        /*关闭按钮*/
+        .close{
+            position: absolute;
+            line-height: 46px;
+            height:46px;
+            right:0;
+            top:0;
+            text-align: center;
+            width:46px;
+            font-size: 14px;
+            color: #657180;
+            cursor: pointer;
+        }
+    }
+
+    /*步骤状态*/
+    &-step-status{
+        margin-bottom:10px;
+        padding:46px 0;
+    }
+    &-step-status-innner{
+        text-align: center;
+
+        span{
+            vertical-align: middle;
+            margin:0 10px;
+            font-size: 16px;
+            color: #68717C;
+        }
+        .number{
+            width:24px;
+            height:24px;
+            text-align: center;
+            line-height: 24px;
+            display: inline-block;
+            font-size: 16px;
+            color: #FFFFFF;
+            border-radius:50%;
+            background: #CDD1D3;
+
+            &.current{
+                background: #F18950;
+            }
+        }
+    }
+
+    /*步骤详情*/
+    &-steps{
+        position: relative;
+        .steps-btn{
+            &.fixedModel{
+                position: fixed;
+                bottom: 0;
+                left: 170px;
+                right: 0;
+                background: rgba(116, 127, 140, 0.8);
+                padding: 10px;
+                z-index: 9;
+            }
+            &.steps-btn-fixed{
+                padding-right:80px;
+                margin-top:20px;
+                text-align: right;
+            }
+        }
+
+        @mixin stepStyle{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding-bottom: 50px;
+        }
+        /*第一步*/
+        .step1{
+            @include stepStyle;
+
+            .addOrEdit{
+                width:600px;
+                margin:0 auto;
+
+                &.single-model{
+                    width:300px;
+                }
+            }
+            .importbtn{
+                width:240px;
+                height:300px;
+                background: #FFFFFF;
+                box-shadow: 0 5px 10px 0 #D4DDE7;
+                padding-top:10px;
+                position: relative;
+                cursor: pointer;
+                border-top: 1px solid #f3f3f3;
+
+                &:hover{
+                    transform: translateY(-5px);
+                    transition: all 0.3s;
+                    box-shadow: 0 5px 10px 0 #B3BAC2;
+                }
+
+                h1{
+                    font-size: 16px;
+                    color: #657180;
+                    line-height: 44px;
+                    height:44px;
+                    text-align: center;
+                }
+                .des{
+                    font-size: 14px;
+                    color: #68717C;
+                    width:168px;
+                    margin:0 auto;
+                    text-align: center;
+                    height: 42px;
+                    overflow: hidden;
+                }
+                .btn{
+                    background: url(./images/btns.png) no-repeat;
+                    width:96px;
+                    height:97px;
+                    margin-top:23px;
+                    margin:15px auto 0;
+                }
+                .hrefname{
+                    background-image: linear-gradient(-226deg, #F9F5EF 0%, #F5E7EA 100%);
+                    height: 70px;
+                    line-height: 70px;
+                    position: absolute;
+                    left:0;
+                    bottom:0;
+                    width:100%;
+                    font-size: 14px;
+                    color: rgb(133,172,213);
+                    text-align: center;
+                }
+
+                &.add{
+                    float: left;
+                }
+                &.edit{
+                    float: right;
+                    .btn{
+                        background-position:-96px 0;
+                    }
+                    .hrefname{
+                        background-image: linear-gradient(-226deg, #ECFCFF 0%, #E6F1FF 100%);
+                    }
+                }
+
+
+            }
+        }
+
+        /*第二步*/
+        .step2{
+            @include stepStyle;
+            padding: 0px 180px;
+            min-height: 300px;
+            padding-bottom: 80px;
+
+            .select-all{
+                border-bottom:1px solid rgb(92,104,118);
+                color: #68717C;
+                line-height: 40px;
+
+                .ivu-checkbox-wrapper{
+                    font-size: 16px;
+                    color: #68717C;
+                    line-height: 14px;
+                }
+            }
+
+            /*显示字段组*/
+            .select-group{
+                margin-top:10px;
+
+                .title{
+                    height: 53px;
+                    line-height: 53px;
+                    .ivu-checkbox-wrapper{
+                        font-size: 16px;
+                        color: #68717C;
+                        line-height: 14px;
+                    }
+                }
+                .children{
+                    .checkbox-item{
+                        float: left;
+                        width: 190px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        margin-bottom: 10px;
+                    }
+                    .ivu-checkbox-wrapper{
+                        margin-right:50px;
+                        font-size: 14px;
+                        color: #68717C;
+                        line-height: 14px;
+                    }
+                }
+            }
+
+        }
+
+        /*第三步*/
+        .step3{
+            @include stepStyle;
+
+            &-inner{
+                width:1050px;
+                margin:0 auto;
+            }
+
+            .step3-left{
+                float: left;
+            }
+            .d-title{
+                font-size: 14px;
+                color: #68717C;
+                height: 40px;
+                line-height:40px;
+            }
+
+            .step3-right{
+                float: right;
+            }
+
+            .download-des{
+                padding:10px 0;
+                position: relative;
+
+                .ivu-tooltip-popper{
+                    left:74px!important;
+                }
+            }
+
+            /*导入进度条*/
+            .download-progress{
+                margin-top:25px;
+            }
+            .download-progress-status{
+                text-align: center;
+                line-height: 28px;
+            }
+
+            /*导入错误信息提示*/
+            .download-error-msg{
+                margin-top:40px;
+                .icon{
+                    vertical-align: middle;
+                    font-size: 18px;
+                    color: #F65C5E;
+                }
+                .error-msg{
+                    vertical-align: middle;
+                    font-size: 14px;
+                    color: #F65C5E;
+                }
+            }
+
+            &-recovery{
+                margin:20px;
+            }
+
+        }
+
+        /*第四步*/
+        .step4{
+            width:200px;
+            margin:50px auto 0;
+            text-align:center;
+
+            .success-icon{
+                background: url("./images/duihao.png") no-repeat;
+                width:52px;
+                height:52px;
+                display: inline-block;
+            }
+        }
+
+    }
+}

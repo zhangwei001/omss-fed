@@ -1,0 +1,523 @@
+$prefixCls:'art-ui-dialog'; //前缀
+
+.#{$prefixCls} {
+    *zoom: 1;
+    _float: left;
+    position: relative;
+    background-color: #FFF;
+    border: 1px solid #999;
+    border-radius: 6px;
+    outline: 0;
+    background-clip: padding-box;
+    /*font-family: Helvetica, arial, sans-serif;*/
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    //-webkit-transition: -webkit-transform .2s;
+    //transition: transform .2s;
+    
+    &-fullscreen-btn{
+        position: absolute;
+        top: 10px;
+        right: 46px;
+        color: #848F9D;
+        font-size: 16px;
+        cursor: pointer;
+    }
+}
+
+/*弹出窗体*/
+.#{$prefixCls}-popup-show {
+
+    .#{$prefixCls} {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    /*全屏的样式*/
+    &.#{$prefixCls}-popup-show-fullscreen{
+        left:0!important;
+        top:0!important;
+        width:100%!important;
+        height:100%!important;
+
+        .#{$prefixCls} {
+            height:100%!important;
+        }
+
+        .#{$prefixCls}-grid{
+            width:100%!important;
+            height: 100%!important;
+        }
+
+        .#{$prefixCls}-content{
+            width:100% !important;
+        }
+        .#{$prefixCls}-body{
+            vertical-align: top!important;
+        }
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+}
+
+.#{$prefixCls}-popup-focus .#{$prefixCls} {
+    //box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.#{$prefixCls}-popup-modal .#{$prefixCls} {
+    //box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 256px rgba(255, 255, 255, .3);
+}
+
+.#{$prefixCls}-grid {
+    width: auto;
+    margin: 0;
+    border: 0 none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: transparent;
+}
+
+.#{$prefixCls}-header,
+.#{$prefixCls}-body,
+.#{$prefixCls}-footer {
+    padding: 0;
+    border: 0 none;
+    text-align: left;
+    background: transparent;
+}
+
+.#{$prefixCls}-header {
+    white-space: nowrap;
+    border-bottom: 1px solid #E5E5E5;
+    position: relative;
+    height:54px;
+}
+
+.#{$prefixCls}-close {
+    position: relative;
+    _position: absolute;
+    float: right;
+    top: 13px;
+    right: 13px;
+    _height: 26px;
+    padding: 0 4px;
+    font-size: 16px;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #FFF;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    cursor: pointer;
+    background: transparent;
+    _background: #FFF;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.#{$prefixCls}-close:hover,
+.#{$prefixCls}-close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.#{$prefixCls}-title {
+    margin: 0;
+    line-height: 1.428571429;
+    min-height: 16.428571429px;
+    padding: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: default;
+    font-size: 16px;
+    color: #657180;
+    font-weight: 700;
+}
+
+.#{$prefixCls}-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.#{$prefixCls}-content {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    *zoom: 1;
+    *display: inline;
+    text-align: left;
+}
+
+.#{$prefixCls}-footer {
+    padding: 0 20px 20px 20px;
+    height:56px;
+}
+
+.#{$prefixCls}-statusbar {
+    float: left;
+    margin-right: 20px;
+    padding: 6px 0;
+    line-height: 1.428571429;
+    font-size: 14px;
+    color: #888;
+    white-space: nowrap;
+}
+
+.#{$prefixCls}-statusbar label:hover {
+    color: #333;
+}
+
+.#{$prefixCls}-statusbar input,
+.#{$prefixCls}-statusbar .label {
+    vertical-align: middle;
+}
+
+.#{$prefixCls}-button {
+    /*float: right;*/
+    white-space: nowrap;
+    text-align: center;
+
+    &.left-style-btns{
+        text-align: right;
+    }
+}
+
+.#{$prefixCls}-footer button+button {
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.#{$prefixCls}-footer button {
+    width: auto;
+    overflow: visible;
+    display: inline-block;
+    padding: 7px 15px;
+    _margin-left: 5px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.#{$prefixCls}-footer button:focus {
+    /*outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;*/
+    outline: 0;
+}
+
+.#{$prefixCls}-footer button:hover,
+.#{$prefixCls}-footer button:focus {
+    color: #333333;
+    text-decoration: none;
+}
+
+.#{$prefixCls}-footer button:active {
+    background-image: none;
+    outline: 0;
+    /*-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);*/
+}
+
+.#{$prefixCls}-footer button[disabled] {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.#{$prefixCls}-footer button {
+    color: #576372;
+    background-color: transparent;
+    border-color: #939fae;
+}
+
+.#{$prefixCls}-footer button:hover{
+    color: #808d9d;
+    background-color: transparent;
+    border-color: #a1adbb;
+}
+.#{$prefixCls}-footer button:focus,
+.#{$prefixCls}-footer button:active {
+    color: #576372;
+    background-color: transparent;
+    border-color: #939fae;
+    outline: 0;
+}
+
+.#{$prefixCls}-footer button:active {
+    background-image: none;
+}
+
+.#{$prefixCls}-footer button[disabled],
+.#{$prefixCls}-footer button[disabled]:hover,
+.#{$prefixCls}-footer button[disabled]:focus,
+.#{$prefixCls}-footer button[disabled]:active {
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+
+.#{$prefixCls}-footer button.#{$prefixCls}-autofocus {
+    color: #ffffff;
+    background-color: #e5824c;
+    border-color: #e5824c;
+}
+
+.#{$prefixCls}-footer button.#{$prefixCls}-autofocus:hover{
+    background-color: #f29562;
+    border-color: #f29562;
+}
+.#{$prefixCls}-footer button.#{$prefixCls}-autofocus:focus,
+.#{$prefixCls}-footer button.#{$prefixCls}-autofocus:active {
+    color: #ffffff;
+    background-color: #e5824c;
+    border-color: #e5824c;
+    outline: 0;
+}
+
+.#{$prefixCls}-footer button.#{$prefixCls}-autofocus:active {
+    background-image: none;
+}
+
+.#{$prefixCls}-popup-top-left .#{$prefixCls},
+.#{$prefixCls}-popup-top .#{$prefixCls},
+.#{$prefixCls}-popup-top-right .#{$prefixCls} {
+    top: -8px;
+}
+
+.#{$prefixCls}-popup-bottom-left .#{$prefixCls},
+.#{$prefixCls}-popup-bottom .#{$prefixCls},
+.#{$prefixCls}-popup-bottom-right .#{$prefixCls} {
+    top: 8px;
+}
+
+.#{$prefixCls}-popup-left-top .#{$prefixCls},
+.#{$prefixCls}-popup-left .#{$prefixCls},
+.#{$prefixCls}-popup-left-bottom .#{$prefixCls} {
+    left: -8px;
+}
+
+.#{$prefixCls}-popup-right-top .#{$prefixCls},
+.#{$prefixCls}-popup-right .#{$prefixCls},
+.#{$prefixCls}-popup-right-bottom .#{$prefixCls} {
+    left: 8px;
+}
+
+.#{$prefixCls}-arrow-a,
+.#{$prefixCls}-arrow-b {
+    position: absolute;
+    display: none;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    _color: #FF3FFF;
+    _filter: chroma(color=#FF3FFF);
+    border: 8px dashed transparent;
+}
+
+.#{$prefixCls}-popup-follow .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-follow .#{$prefixCls}-arrow-b {
+    display: block;
+}
+
+.#{$prefixCls}-popup-top-left .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-top .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-top-right .#{$prefixCls}-arrow-a {
+    bottom: -16px;
+    border-top: 8px solid #7C7C7C;
+}
+
+.#{$prefixCls}-popup-top-left .#{$prefixCls}-arrow-b,
+.#{$prefixCls}-popup-top .#{$prefixCls}-arrow-b,
+.#{$prefixCls}-popup-top-right .#{$prefixCls}-arrow-b {
+    bottom: -15px;
+    border-top: 8px solid #fff;
+}
+
+.#{$prefixCls}-popup-top-left .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-top-left .#{$prefixCls}-arrow-b {
+    left: 15px;
+}
+
+.#{$prefixCls}-popup-top .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-top .#{$prefixCls}-arrow-b {
+    left: 50%;
+    margin-left: -8px;
+}
+
+.#{$prefixCls}-popup-top-right .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-top-right .#{$prefixCls}-arrow-b {
+    right: 15px;
+}
+
+.#{$prefixCls}-popup-bottom-left .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-bottom .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-bottom-right .#{$prefixCls}-arrow-a {
+    top: -16px;
+    border-bottom: 8px solid #7C7C7C;
+}
+
+.#{$prefixCls}-popup-bottom-left .#{$prefixCls}-arrow-b,
+.#{$prefixCls}-popup-bottom .#{$prefixCls}-arrow-b,
+.#{$prefixCls}-popup-bottom-right .#{$prefixCls}-arrow-b {
+    top: -15px;
+    border-bottom: 8px solid #fff;
+}
+
+.#{$prefixCls}-popup-bottom-left .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-bottom-left .#{$prefixCls}-arrow-b {
+    left: 15px;
+}
+
+.#{$prefixCls}-popup-bottom .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-bottom .#{$prefixCls}-arrow-b {
+    margin-left: -8px;
+    left: 50%;
+}
+
+.#{$prefixCls}-popup-bottom-right .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-bottom-right .#{$prefixCls}-arrow-b {
+    right: 15px;
+}
+
+.#{$prefixCls}-popup-left-top .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-left .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-left-bottom .#{$prefixCls}-arrow-a {
+    right: -16px;
+    border-left: 8px solid #7C7C7C;
+}
+
+.#{$prefixCls}-popup-left-top .#{$prefixCls}-arrow-b,
+.#{$prefixCls}-popup-left .#{$prefixCls}-arrow-b,
+.#{$prefixCls}-popup-left-bottom .#{$prefixCls}-arrow-b {
+    right: -15px;
+    border-left: 8px solid #fff;
+}
+
+.#{$prefixCls}-popup-left-top .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-left-top .#{$prefixCls}-arrow-b {
+    top: 15px;
+}
+
+.#{$prefixCls}-popup-left .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-left .#{$prefixCls}-arrow-b {
+    margin-top: -8px;
+    top: 50%;
+}
+
+.#{$prefixCls}-popup-left-bottom .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-left-bottom .#{$prefixCls}-arrow-b {
+    bottom: 15px;
+}
+
+.#{$prefixCls}-popup-right-top .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-right .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-right-bottom .#{$prefixCls}-arrow-a {
+    left: -16px;
+    border-right: 8px solid #7C7C7C;
+}
+
+.#{$prefixCls}-popup-right-top .#{$prefixCls}-arrow-b,
+.#{$prefixCls}-popup-right .#{$prefixCls}-arrow-b,
+.#{$prefixCls}-popup-right-bottom .#{$prefixCls}-arrow-b {
+    left: -15px;
+    border-right: 8px solid #fff;
+}
+
+.#{$prefixCls}-popup-right-top .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-right-top .#{$prefixCls}-arrow-b {
+    top: 15px;
+}
+
+.#{$prefixCls}-popup-right .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-right .#{$prefixCls}-arrow-b {
+    margin-top: -8px;
+    top: 50%;
+}
+
+.#{$prefixCls}-popup-right-bottom .#{$prefixCls}-arrow-a,
+.#{$prefixCls}-popup-right-bottom .#{$prefixCls}-arrow-b {
+    bottom: 15px;
+}
+
+@-webkit-keyframes art-ui-dialog-loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes art-ui-dialog-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.#{$prefixCls}-loading {
+    vertical-align: middle;
+    position: relative;
+    display: block;
+    *zoom: 1;
+    *display: inline;
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    margin: -16px auto 0 auto;
+    font-size: 0;
+    text-indent: -999em;
+    color: #666;
+}
+
+.#{$prefixCls}-loading {
+    width: 100%\9;
+    text-indent: 0\9;
+    line-height: 32px\9;
+    text-align: center\9;
+    font-size: 12px\9;
+}
+
+.#{$prefixCls}-loading::after {
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 3px;
+    margin: 14.5px 0 0 14.5px;
+    border-radius: 100%;
+    box-shadow: 0 -10px 0 1px #ccc, 10px 0px #ccc, 0 10px #ccc, -10px 0 #ccc, -7px -7px 0 0.5px #ccc, 7px -7px 0 1.5px #ccc, 7px 7px #ccc, -7px 7px #ccc;
+    -webkit-transform: rotate(360deg);
+    -webkit-animation: art-ui-dialog-loading 1.5s infinite linear;
+    transform: rotate(360deg);
+    animation: art-ui-dialog-loading 1.5s infinite linear;
+    display: none\9;
+}

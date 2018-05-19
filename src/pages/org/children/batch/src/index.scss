@@ -1,0 +1,143 @@
+
+$preCls : '.batch';
+
+#{$preCls} {
+
+    position: relative;    
+
+    & > .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 46px;
+        background: #F5F7F9;
+        .back {
+			position: absolute;
+			top: 12px;
+			left: 1.5%;
+            cursor: pointer;
+            font-size: 14px;
+
+            span {
+                color: #657180;
+            }
+        }
+        .title {
+            font-size: 16px;
+            color: #657180;
+        }
+    }
+    
+	
+
+	&-inline{
+		display: flex;
+		justify-content: center;
+		& > i{
+			font-size: 20px;
+			margin: 0 8px;
+		}
+	}
+	&-step{
+		width: 350px;
+		margin: 0 auto;
+		padding: 20px 0 ;
+		position: relative;
+		left:46px;
+	}
+	&-th-required:before{
+		content: '*';
+	    display: inline-block;
+	    margin-right: 4px;
+	    line-height: 1;
+	    font-family: SimSun;
+	    font-size: 12px;
+	    color: #ed3f14;
+	}
+	&-fixed-bottom{
+		background: rgba(0,0,0,0.65);
+		height: 50px;
+		position: fixed;
+		bottom:0;
+		left:0;
+		z-index: 10;
+		width: 100%;
+		padding:10px 100px;
+
+		.pull-right{
+			float: right;
+			button{
+				margin-right:10px;
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	&-step-wrapper{
+        width: 56%;
+        min-width: 1020px;
+        margin:0 auto;
+    	padding-bottom:60px;
+    }
+
+	.icon-require:before{
+		content: '*';
+	    display: inline-block;
+	    margin-right: 4px;
+	    line-height: 1;
+	    font-family: SimSun;
+	    font-size: 12px;
+	    color: #ed3f14;
+	}
+	.input-w{
+		width: 140px;
+		position: relative;
+	}
+	.btn-cancle{
+		color: #2D8CF0;
+		cursor: pointer;
+	}
+	.older-data{
+		width: 140px;
+		height: 32px;
+		line-height: 1.5;
+		padding: 4px 7px;
+		background:#F5F7F9;
+		font-size:14px;
+		border-radius: 4px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.ivu-spin-fix.batch-loading{
+		position : fixed;
+		z-index: 10;
+	}
+	.ivu-table{
+		&:before , &:after{
+			display: none;
+		}
+	}
+	.ivu-table-fixed{
+		z-index: 10;
+	}
+	.ivu-table-fixed:before{
+		display: none;
+	}
+	.ivu-table td , .ivu-table th{
+		text-align: center;
+		padding: 0 10px;
+	}
+	.ivu-steps-item.ivu-steps-status-finish .ivu-steps-tail>i:after{
+		background : #E3E8EE;
+	}
+	.ivu-steps .ivu-steps-title{
+		position: relative;
+		top:4px;
+	}
+	.ivu-table{
+		overflow-x: auto;
+	}
+}

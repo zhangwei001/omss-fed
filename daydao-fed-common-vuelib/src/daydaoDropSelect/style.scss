@@ -1,0 +1,29 @@
+@mixin ztreeStyle{
+  /*ztree的样式重置*/
+  .ztree{
+    li{
+      span.button{
+        background-image:url("./img/zTreeStandard.png");
+      }
+      /*a{
+          text-decoration: none!important;
+      }*/
+
+      //当前选中的节点
+      a.curSelectedNode{
+        padding-top: 0;
+        color: #2D8CF0;
+        height: 16px;
+        opacity: .8;
+        background: #D6EBFF;
+        border-radius: 2px;
+        border: none;
+        padding: 1px 2px;
+        text-decoration: none!important;
+      }
+      ul.line{
+        background: none;
+      }
+    }
+  }
+}

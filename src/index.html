@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="Shortcut Icon" href="//static.daydao.com/static/common/images/logoicond.ico?v=<%= htmlWebpackPlugin.options.sVersion %>">
+    <link rel="stylesheet" href="//static.daydao.com/static/common/css/reset_v2.css?v=<%= htmlWebpackPlugin.options.sVersion %>"> <!--新本reset-->
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.iviewPath %>styles/iview.css?v=<%= htmlWebpackPlugin.options.sVersion %>">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_49553_qqaubggppl4ygb9.css">
+    <title>理才网</title>
+</head>
+<body>
+
+<!--页面视图渲染部分-->
+<div id="daydao_main_app">
+
+    <common-header v-on:after-get-user-info="afterGetUserInfo"></common-header>
+
+    <router-view></router-view>
+
+
+
+</div>
+
+
+<script src="//static.daydao.com/static/common/plugins/checkBrowser.js"></script> <!--PC端浏览器检测程序-->
+<script src="//static.daydao.com/static/common/plugins/jquery-1.11.1.min.js"></script>
+<script src="//static.daydao.com/static/common/plugins/sea.js"></script>
+<script src="//static.daydao.com/static/common/plugins/<%= htmlWebpackPlugin.options.vueVersion %>"></script>
+<script src="//static.daydao.com/static/common/plugins/vue-router2.js"></script>
+<script src="//static.daydao.com/static/common/plugins/vuex2.js"></script>
+<script src="<%= htmlWebpackPlugin.options.iviewPath %>iview.min.js?v=<%= htmlWebpackPlugin.options.sVersion %>"></script>
+<script>var sProjectVersion = "<%= htmlWebpackPlugin.options.sVersion %>";</script>
+</body>
+</html>

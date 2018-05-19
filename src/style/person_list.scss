@@ -1,0 +1,14 @@
+/*公共的，员工列表，包括在职，离职，未激活*/
+
+.page-top-right-link{
+    float: right;
+    line-height: 40px;
+    margin-right: 20px;
+
+    span,a{
+        margin-left:10px;
+    }
+    a{
+        color: #2D8CF0;
+    }
+}

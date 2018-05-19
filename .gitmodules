@@ -1,0 +1,3 @@
+[submodule "daydao-fed-common-vuelib"]
+	path = daydao-fed-common-vuelib
+	url = git@gitlab.dayhr.com:COMMON-COMPONENTS/daydao-fed-common-vuelib.git
